@@ -1,1 +1,1 @@
-# school-files
+# CS 161 Projects
