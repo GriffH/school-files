@@ -1,5 +1,6 @@
 ## Design
 
+##ALERT: This is not fully finished, will finish working tomorrow ran out of time. Thanks!
 
 1. Cpu gets word from random bank of words
 2. Cpu displays underscores for each letter of word
