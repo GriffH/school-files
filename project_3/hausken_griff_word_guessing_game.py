@@ -28,6 +28,10 @@ def getword():
 def life_counter():
     global lives
     print("           Tries remaining: ",lives)
+    if lives == 0:
+        global win
+        win = False 
+        print("You lose :(")
 
 def life_lose():
     global lives
@@ -56,6 +60,10 @@ def check_guess(check):
            print("Already guessed")
            return
        guessed.append(check)
+       if check not in word_list:
+           life_lose()
+           return
+
        for x in word_list:
            if check == x:
                if check not in correct:
