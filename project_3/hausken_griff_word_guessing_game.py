@@ -64,7 +64,8 @@ def check_guess(check):
 def correct_guesses_display():
     print("Correct guesses so far: ", end="")
     for a in range(len(correct)):
-       print(correct[a], ", ", sep="")
+       print(correct[a], ", ", sep="", end="")
+    print()
 
 
 def display():
@@ -76,39 +77,39 @@ def display():
         else:
             print("_ ", end="")
 
-def win():
+def wincon():
     word_list = []
     word_list[:0] = word
     c = list(set(correct))
     w = list(set(word_list))
     if c == w:
         print("You Win!")
-        return True
-    return
-        
+        global win
+        win = False 
 
-def play_again():
-    play_again = input("Play again? y/n: ")
-    if play_again == "y":
-        return True
-    elif play_again == "n":
-        return False
-        
 
-clear()
-getword()
-life_counter()
-while True:
-    display()
-    life_counter()
-    correct_guesses_display()
-    win()
-    if win() == True:
-        play_again()
-        if play_again == True:
-            continue
-        elif play_again == False:
-            break
-    get_guess()
-    check_guess(guess)
+global win
+win = True
+def game():
     clear()
+    getword()
+    display()
+    while win:
+        get_guess()
+        clear()
+        check_guess(guess)
+        display()
+        life_counter()
+        correct_guesses_display()
+        wincon()
+
+
+while True:
+    game()
+    play_again = input("Do you want to play again? y/n:")
+    if play_again == "y":
+        continue
+    else:
+        break
+
+
