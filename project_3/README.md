@@ -8,7 +8,7 @@
 5. Player chooses letter
 6. Cpu checks if letter is in word
 7. If letter is in word, letter is displayed
-8. If letter not in word life -= 1
+8. If letter not in word life -= 1 and display in list of wrong choices.
 9. Loop
 10. When lives = 0 Cpu displays "You lose"
 11. If all letters guessed Cpu displays "You win!"
