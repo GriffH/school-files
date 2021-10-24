@@ -1,7 +1,5 @@
 # Project 4 Design: *The Pantry Tracker*
 
-# __Design__
-
 1. Greet user and load tui
 1. Load items in pantry from external "database"
 1. Ask if user wants to add to pantry, subtract from pantry, or check items in pantry
