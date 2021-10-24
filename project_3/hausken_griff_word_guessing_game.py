@@ -1,22 +1,22 @@
 import random
 import os
 
-    
 
-global correct
+
+global correct      # The list used for correct guesses
 correct = []
 
 
-global lives
+global lives        # Life counter
 lives = 9
 
-global guessed
+global guessed      # List of guesses the player has made
 guessed = []
 
-def clear():
+def clear():        # The function to clear the screen
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def getword():
+def getword():  # Collects word from wordlist.txt
     lines  = open('wordlist.txt').read().splitlines()
     myline = random.choice(lines)
     global word
@@ -25,7 +25,7 @@ def getword():
     word = word.strip() 
 
         
-def life_counter():
+def life_counter(): # Displays lives and checks for 0 lives as a loss condition
     global lives
     print("           Tries remaining: ",lives)
     if lives == 0:
@@ -33,12 +33,12 @@ def life_counter():
         win = False 
         print("You lose :(")
 
-def life_lose():
+def life_lose():    # Subtracts one from life counter and prints remaining lives
     global lives
     lives -= 1
     print("           Tries remaining: ",lives)
 
-def get_guess():
+def get_guess():    # Gets guess from player and filters bad inputs
     while True:
         global guess
         guess = input("Guess a letter!:")
@@ -53,8 +53,8 @@ def get_guess():
             continue
         
 
-def check_guess(check):
-       word_list = []
+def check_guess(check): # Checks input against word using lists, if guess is correct
+       word_list = []   # add it to correct list
        word_list[:0] = word
        if check in guessed:
            print("Already guessed")
@@ -69,14 +69,14 @@ def check_guess(check):
                if check not in correct:
                    correct.append(check)
 
-def correct_guesses_display():
+def correct_guesses_display():  # Displays correct guesses and word so far
     print("Correct guesses so far: ", end="")
     for a in range(len(correct)):
        print(correct[a], ", ", sep="", end="")
     print()
 
 
-def display():
+def display():  # Displays word so far with correct guesses
     word_list = []
     word_list[:0] = word
     for a in word_list:
@@ -85,7 +85,7 @@ def display():
         else:
             print("_ ", end="")
 
-def wincon():
+def wincon():   # Checks if the word has been fully guessed
     word_list = []
     word_list[:0] = word
     c = list(set(correct))
@@ -96,9 +96,9 @@ def wincon():
         win = False 
 
 
-global win
+global win  # Variable used to end loop if the player has won
 win = True
-def game():
+def game(): # The game function order
     clear()
     getword()
     display()
@@ -112,7 +112,7 @@ def game():
         wincon()
 
 
-while True:
+while True: # Contains the game and allows for an easy play again
     game()
     play_again = input("Do you want to play again? y/n:")
     if play_again == "y":
