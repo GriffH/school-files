@@ -2,7 +2,7 @@
 
 1. Greet user and load tui
 1. Load items in pantry from external "database"
-1. Ask if user wants to add to pantry, subtract from pantry, or check items in pantry
+1. Ask if user wants to add to pantry, remove from pantry, or view items in pantry
 1. **Add**
 	1. Bring up add tui
 	1. Ask for item and quantity to add
