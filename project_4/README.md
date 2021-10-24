@@ -1,5 +1,5 @@
 # Project 4 Design
-##*The Pantry Tracker*
+## *The Pantry Tracker*
 
 # __Design__
 
